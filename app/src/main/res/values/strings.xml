@@ -1,0 +1,118 @@
+<resources>
+    <string name="app_name">교보문고</string>
+
+    <!-- 툴바 -->
+    <string name="toolbar_title">교보문고</string>
+    <string name="toolbar_logo_top">KYOBO</string>
+    <string name="toolbar_logo_bottom">교보문고</string>
+
+    <!-- 상단 서비스 칩 -->
+    <string name="chip_ebook">eBook</string>
+    <string name="chip_sam">sam</string>
+
+    <!-- 검색 -->
+    <string name="search_hint">나다운 길을 찾는 육아 에세이</string>
+
+    <!-- 카테고리 탭 -->
+    <string name="tab_worldpoetry">세계시의날</string>
+    <string name="tab_newschool">새학기혜택</string>
+    <string name="tab_best">베스트</string>
+    <string name="tab_new">신상품</string>
+    <string name="tab_events">이벤트</string>
+
+    <!-- 배너 -->
+    <string name="banner_ebook_label">eBook</string>
+    <string name="banner_title">월간 대최서\n3월호 출간!</string>
+    <string name="banner_pager">24 · 36</string>
+    <string name="banner_view_all">전체보기</string>
+
+    <!-- 퀵 메뉴 -->
+    <string name="quick_benefits">혜택·이벤트</string>
+    <string name="quick_daily_special">오늘만특가</string>
+    <string name="quick_mission">오늘의미션</string>
+    <string name="quick_store">매장</string>
+    <string name="quick_funding">바로펀딩</string>
+
+    <!-- AD 도서 -->
+    <string name="ad_label">AD</string>
+    <string name="ad_book_title">부처님 말씀대로 살아보니</string>
+    <string name="ad_book_desc">고통은 마음의 습관이며, 습관은 바꿀 수 있다</string>
+
+    <!-- 오늘의 선택 섹션 -->
+    <string name="section_todays_pick">오늘의 선택</string>
+    <string name="more_btn">더보기 +</string>
+    <string name="tab_domestic">국내도서</string>
+    <string name="tab_foreign">외국도서</string>
+    <string name="tab_ebook">eBook</string>
+    <string name="tab_sam">sam</string>
+    <string name="tab_hottracks">핫트랙스</string>
+
+    <!-- 오늘의 선택 도서: 하루 토막 상식 -->
+    <string name="book1_title">하루 토막 상식</string>
+    <string name="book1_author">지은이 하토상</string>
+    <string name="book1_tag">알고 있으면 쏠쏠한 생활밀착형 잡학상식</string>
+    <string name="book1_desc">스마트폰만 들여다보기 지겨울 때 꺼내 읽는 잡학상식 꾸러미!</string>
+    <string name="add_to_cart_btn">담기</string>
+
+    <!-- 어차피 책이 더 좋을 거예요 섹션 -->
+    <string name="section_books_better">어차피 책이 더 좋을 거예요</string>
+    <string name="book2_title">프로젝트 헤일메리\n(영화 특별판)</string>
+    <string name="book3_title">죽은 왕녀를 위한\n파반느(양장 특별판)</string>
+    <string name="book4_title">햄릿</string>
+
+    <!-- 출판사 추천 섹션 -->
+    <string name="section_publisher_pick">출판사에서 자신있게 추천해요</string>
+
+    <!-- 하단 네비게이션 (교보문고) -->
+    <string name="nav_home">홈</string>
+    <string name="nav_search_label">검색</string>
+    <string name="nav_my">MY</string>
+    <string name="nav_history">히스토리</string>
+    <string name="nav_category">카테고리</string>
+
+    <!-- 기존 호환용 -->
+    <string name="nav_order_history">주문내역</string>
+    <string name="nav_shopping">온라인몰</string>
+    <string name="nav_brand">브랜드</string>
+    <string name="nav_gift">선물하기</string>
+    <string name="nav_event">이벤트</string>
+    <string name="nav_stylelive">스타일라이브</string>
+    <string name="nav_allmenu">전체메뉴</string>
+    <string name="nav_myheart">마이하트</string>
+    <string name="nav_mypage">마이페이지</string>
+
+    <!-- 페이지 타이틀/기타 -->
+    <string name="page_title">홈</string>
+    <string name="bag_label">장바구니</string>
+    <string name="breadcrumb_men">국내도서 ▼</string>
+    <string name="breadcrumb_outer">베스트셀러 ▼</string>
+    <string name="cat_all">전체</string>
+    <string name="cat_jacket">소설</string>
+    <string name="cat_jumper">에세이</string>
+    <string name="cat_trench">자기계발</string>
+    <string name="cat_cardigan">인문</string>
+    <string name="cat_coat">경제/경영</string>
+    <string name="product_count">2,847 개의 도서</string>
+    <string name="sort_latest">최신순</string>
+    <string name="filter">필터</string>
+
+    <!-- Braze 이벤트용 도서 데이터 -->
+    <string name="product1_brand">하토상</string>
+    <string name="product1_name">하루 토막 상식</string>
+    <string name="product1_price">16,800원</string>
+    <string name="product2_brand">앤디 위어</string>
+    <string name="product2_name">프로젝트 헤일메리 (영화 특별판)</string>
+    <string name="product2_price">17,100원</string>
+    <string name="product3_brand">박민규</string>
+    <string name="product3_name">죽은 왕녀를 위한 파반느</string>
+    <string name="product3_price">15,000원</string>
+    <string name="product4_brand">셰익스피어</string>
+    <string name="product4_name">햄릿</string>
+    <string name="product4_price">12,000원</string>
+    <string name="product5_brand">아잔 차</string>
+    <string name="product5_name">부처님 말씀대로 살아보니</string>
+    <string name="product5_price">15,800원</string>
+    <string name="product6_brand">사람인력연구소</string>
+    <string name="product6_name">사람을 잇는 힘 인간력</string>
+    <string name="product6_price">16,000원</string>
+</resources>

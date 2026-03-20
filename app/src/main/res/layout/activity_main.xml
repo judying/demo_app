@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- ===== Top App Bar ===== -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:elevation="0dp">
+
+        <!-- Row 1: 교보문고 로고 + eBook/sam 칩 + 장바구니 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:paddingHorizontal="16dp">
+
+            <!-- 좌측: 교보문고 로고 -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_kyobo_logo"
+                android:contentDescription="교보문고" />
+
+            <!-- 우측: eBook 칩 + sam 칩 + 드롭다운 + 장바구니 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_alignParentEnd="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:text="eBook"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:background="@drawable/bg_kyobo_chip_blue"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:text="sam"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:background="@drawable/bg_kyobo_chip_teal"
+                    android:layout_marginStart="6dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" ▾"
+                    android:textSize="14sp"
+                    android:textColor="#555555" />
+
+                <ImageButton
+                    android:id="@+id/btnCart"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_cart"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="장바구니"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Row 2: 검색창 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingHorizontal="12dp"
+            android:paddingBottom="6dp"
+            android:background="@drawable/bg_search_bar"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="8dp"
+                android:text="나다운 길을 찾는 육아 에세이"
+                android:textSize="13sp"
+                android:textColor="#AAAAAA" />
+
+            <ImageButton
+                android:id="@+id/btnSearch"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:src="@drawable/ic_search"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="검색" />
+        </RelativeLayout>
+
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#DDDDDD" />
+
+        <!-- Row 3: 카테고리 탭 -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:scrollbars="none"
+            android:paddingStart="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="세계시의날"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brand_primary"
+                    android:paddingEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="새학기혜택"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:paddingHorizontal="16dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="베스트"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:paddingHorizontal="16dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="신상품"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:paddingHorizontal="16dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이벤트"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:paddingHorizontal="16dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ===== 메인 스크롤 영역 ===== -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ===== 배너: eBook 월간 대최서 ===== -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="#F5EAD8">
+
+                <!-- 좌측: 텍스트 영역 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:text="eBook"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center"
+                        android:paddingHorizontal="10dp"
+                        android:background="@color/brand_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="월간 대최서"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A"
+                        android:layout_marginTop="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3월호 출간!"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A" />
+                </LinearLayout>
+
+                <!-- 우측: 도서 커버 플레이스홀더 -->
+                <LinearLayout
+                    android:layout_width="130dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:elevation="4dp"
+                    android:gravity="center"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="( 대한민국 최고 서점 )"
+                        android:textSize="7sp"
+                        android:textColor="#555555"
+                        android:gravity="center" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="월간"
+                            android:textSize="10sp"
+                            android:textColor="@color/brand_primary"
+                            android:paddingHorizontal="4dp"
+                            android:paddingVertical="2dp"
+                            android:background="#E8F5E9" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="대최서"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- 하단 페이지 인디케이터 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#88000000"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="||  24 · 36  전체보기"
+                        android:textSize="11sp"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- ===== 퀵 메뉴 5개 ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="14dp"
+                android:paddingHorizontal="4dp">
+
+                <!-- 혜택·이벤트 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_qm_benefits"
+                        android:contentDescription="혜택이벤트" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="혜택·이벤트"
+                        android:textSize="11sp"
+                        android:textColor="#333333"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- 오늘만특가 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_qm_special"
+                        android:contentDescription="오늘만특가" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="오늘만특가"
+                        android:textSize="11sp"
+                        android:textColor="#333333"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- 오늘의미션 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_qm_mission"
+                        android:contentDescription="오늘의미션" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="오늘의미션"
+                        android:textSize="11sp"
+                        android:textColor="#333333"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- 매장 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_qm_store"
+                        android:contentDescription="매장" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="매장"
+                        android:textSize="11sp"
+                        android:textColor="#333333"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- 바로펀딩 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_qm_funding"
+                        android:contentDescription="바로펀딩" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="바로펀딩"
+                        android:textSize="11sp"
+                        android:textColor="#333333"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 구분선 (두꺼운 회색) -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#F2F2F2" />
+
+            <!-- ===== AD 도서 카드 ===== -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp">
+
+                <!-- AD 라벨 -->
+                <TextView
+                    android:id="@+id/tvAdLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:text="AD"
+                    android:textSize="10sp"
+                    android:textColor="#888888"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="2dp"
+                    android:background="@drawable/bg_ad_label" />
+
+                <!-- AD 도서 커버 -->
+                <ImageView
+                    android:id="@+id/adBookCover"
+                    android:layout_width="48dp"
+                    android:layout_height="64dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/book_ad"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="AD 도서 커버" />
+
+                <!-- 도서 정보 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/adBookCover"
+                    android:layout_toStartOf="@id/tvAdLabel"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="14dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="부처님 말씀대로 살아보니"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="고통은 마음의 습관이며, 습관은 바꿀 수 있다"
+                        android:textSize="12sp"
+                        android:textColor="#666666"
+                        android:layout_marginTop="5dp"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- 구분선 (두꺼운 회색) -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#F2F2F2" />
+
+            <!-- ===== 오늘의 선택 섹션 ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="8dp">
+
+                <!-- 섹션 헤더 -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="오늘의 선택"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="더보기 +"
+                        android:textSize="13sp"
+                        android:textColor="@color/brand_primary"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </RelativeLayout>
+
+                <!-- 서브 탭: 국내도서 | 외국도서 | eBook | sam | 핫트랙스 -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:scrollbars="none"
+                    android:paddingHorizontal="12dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:text="국내도서"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:gravity="center"
+                            android:paddingHorizontal="12dp"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:text="외국도서"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:gravity="center"
+                            android:paddingHorizontal="12dp"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:text="eBook"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:gravity="center"
+                            android:paddingHorizontal="12dp"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+                        <!-- sam: 선택 상태 -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:text="sam"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:background="@drawable/bg_section_tab_selected"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:text="핫트랙스"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:gravity="center"
+                            android:paddingHorizontal="12dp"
+                            android:clickable="true"
+                            android:focusable="true" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- 대형 도서 카드: 하루 토막 상식 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="14dp">
+
+                    <!-- 도서 커버 (실제 이미지) -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="270dp"
+                        android:src="@drawable/book_today"
+                        android:scaleType="centerInside"
+                        android:background="#EAF4F0"
+                        android:contentDescription="오늘의 선택 도서 커버" />
+
+                    <!-- 도서명 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="하루 토막 상식"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A"
+                        android:layout_marginTop="12dp" />
+
+                    <!-- 설명 태그 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💬 알고 있으면 쏠쏠한 생활밀착형 잡학상식"
+                        android:textSize="13sp"
+                        android:textColor="#3399CC"
+                        android:layout_marginTop="6dp" />
+
+                    <!-- 설명 -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="스마트폰만 들여다보기 지겨울 때 꺼내 읽는 잡학상식 꾸러미!"
+                        android:textSize="13sp"
+                        android:textColor="#555555"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center" />
+
+                    <!-- 담기 버튼 -->
+                    <ImageButton
+                        android:id="@+id/btnCartGift1"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="end"
+                        android:src="@drawable/ic_cart"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="장바구니 담기"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 구분선 (두꺼운 회색) -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#F2F2F2" />
+
+            <!-- ===== 어차피 책이 더 좋을 거예요 섹션 ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="12dp">
+
+                <!-- 섹션 헤더 -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/tvMoreBooks"
+                        android:layout_centerVertical="true"
+                        android:text="어차피 책이 더 좋을 거예요 😉"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A" />
+
+                    <TextView
+                        android:id="@+id/tvMoreBooks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="더보기 +"
+                        android:textSize="13sp"
+                        android:textColor="@color/brand_primary"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </RelativeLayout>
+
+                <!-- 가로 스크롤 도서 목록 -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:paddingStart="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 도서 1: 프로젝트 헤일메리 -->
+                        <LinearLayout
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="12dp"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <FrameLayout
+                                android:layout_width="140dp"
+                                android:layout_height="190dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/book_hail_mary"
+                                    android:scaleType="centerCrop"
+                                    android:contentDescription="프로젝트 헤일메리" />
+
+                                <ImageButton
+                                    android:id="@+id/btnCartGift2"
+                                    android:layout_width="34dp"
+                                    android:layout_height="34dp"
+                                    android:layout_gravity="bottom|end"
+                                    android:padding="7dp"
+                                    android:src="@drawable/ic_cart"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:contentDescription="장바구니 담기" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="프로젝트 헤일메리(영\n화 특별판)"
+                                android:textSize="12sp"
+                                android:textColor="#1A1A1A"
+                                android:layout_marginTop="8dp" />
+                        </LinearLayout>
+
+                        <!-- 도서 2: 죽은 왕녀를 위한 파반느 -->
+                        <LinearLayout
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="12dp"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:layout_width="140dp"
+                                android:layout_height="190dp"
+                                android:src="@drawable/book_pavane"
+                                android:scaleType="centerCrop"
+                                android:contentDescription="죽은 왕녀를 위한 파반느" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="죽은 왕녀를 위한 파반\n느(양장 특별판)"
+                                android:textSize="12sp"
+                                android:textColor="#1A1A1A"
+                                android:layout_marginTop="8dp" />
+                        </LinearLayout>
+
+                        <!-- 도서 3: 햄닛 -->
+                        <LinearLayout
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="16dp"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:layout_width="140dp"
+                                android:layout_height="190dp"
+                                android:src="@drawable/book_hamlet"
+                                android:scaleType="centerCrop"
+                                android:contentDescription="햄닛" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="햄닛"
+                                android:textSize="12sp"
+                                android:textColor="#1A1A1A"
+                                android:layout_marginTop="8dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <!-- 구분선 (두꺼운 회색) -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#F2F2F2" />
+
+            <!-- ===== 출판사 추천 섹션 ===== -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:paddingHorizontal="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="출판사에서 자신있게 추천해요"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A1A" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="AD"
+                    android:textSize="10sp"
+                    android:textColor="#888888"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="2dp"
+                    android:background="@drawable/bg_ad_label" />
+            </RelativeLayout>
+
+            <!-- 출판사 추천 도서 -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:paddingStart="16dp"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="12dp">
+
+                        <ImageView
+                            android:layout_width="140dp"
+                            android:layout_height="190dp"
+                            android:src="@drawable/book_publisher1"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="출판사 추천 도서 1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="삶에게 웃으며\n말 거는 법"
+                            android:textSize="12sp"
+                            android:textColor="#1A1A1A"
+                            android:layout_marginTop="8dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="16dp">
+
+                        <ImageView
+                            android:layout_width="140dp"
+                            android:layout_height="190dp"
+                            android:src="@drawable/book_publisher2"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="출판사 추천 도서 2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="이 정도만 알면\n되는 세계사"
+                            android:textSize="12sp"
+                            android:textColor="#1A1A1A"
+                            android:layout_marginTop="8dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- 하단 여백 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ===== 하단 네비게이션 ===== -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        app:elevation="8dp"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@null"
+        app:itemTextColor="#666666" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
