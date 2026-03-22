@@ -71,15 +71,6 @@
                     android:textSize="14sp"
                     android:textColor="#555555" />
 
-                <ImageButton
-                    android:id="@+id/btnCart"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_cart"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="장바구니"
-                    android:layout_marginStart="4dp" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -201,117 +192,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- ===== 배너: eBook 월간 대최서 ===== -->
-            <FrameLayout
+            <!-- ===== 메인 배너 ===== -->
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:background="#F5EAD8">
-
-                <!-- 좌측: 텍스트 영역 -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="24dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="24dp"
-                        android:text="eBook"
-                        android:textSize="11sp"
-                        android:textStyle="bold"
-                        android:textColor="#FFFFFF"
-                        android:gravity="center"
-                        android:paddingHorizontal="10dp"
-                        android:background="@color/brand_primary" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="월간 대최서"
-                        android:textSize="22sp"
-                        android:textStyle="bold"
-                        android:textColor="#1A1A1A"
-                        android:layout_marginTop="10dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="3월호 출간!"
-                        android:textSize="22sp"
-                        android:textStyle="bold"
-                        android:textColor="#1A1A1A" />
-                </LinearLayout>
-
-                <!-- 우측: 도서 커버 플레이스홀더 -->
-                <LinearLayout
-                    android:layout_width="130dp"
-                    android:layout_height="140dp"
-                    android:layout_gravity="center_vertical|end"
-                    android:layout_marginEnd="20dp"
-                    android:orientation="vertical"
-                    android:background="#FFFFFF"
-                    android:elevation="4dp"
-                    android:gravity="center"
-                    android:padding="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="( 대한민국 최고 서점 )"
-                        android:textSize="7sp"
-                        android:textColor="#555555"
-                        android:gravity="center" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="6dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="월간"
-                            android:textSize="10sp"
-                            android:textColor="@color/brand_primary"
-                            android:paddingHorizontal="4dp"
-                            android:paddingVertical="2dp"
-                            android:background="#E8F5E9" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="대최서"
-                        android:textSize="26sp"
-                        android:textStyle="bold"
-                        android:textColor="#1A1A1A"
-                        android:layout_marginTop="4dp"
-                        android:gravity="center" />
-                </LinearLayout>
-
-                <!-- 하단 페이지 인디케이터 -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="26dp"
-                    android:orientation="horizontal"
-                    android:layout_gravity="bottom|end"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#88000000"
-                    android:gravity="center_vertical"
-                    android:paddingHorizontal="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="||  24 · 36  전체보기"
-                        android:textSize="11sp"
-                        android:textColor="#FFFFFF" />
-                </LinearLayout>
-            </FrameLayout>
+                android:layout_height="180dp"
+                android:src="@drawable/main_banner"
+                android:scaleType="centerCrop"
+                android:contentDescription="메인 배너" />
 
             <!-- ===== 퀵 메뉴 5개 ===== -->
             <LinearLayout

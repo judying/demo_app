@@ -11,4 +11,11 @@
         <item name="android:statusBarColor">@color/brand_primary</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
+
+    <style name="Theme.Twosome.Splash" parent="Theme.Twosome">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="31">@android:color/white</item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="31">@drawable/kyobo_logo</item>
+    </style>
 </resources>
